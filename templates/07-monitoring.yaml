@@ -1,0 +1,10 @@
+resource_registry:
+  OS::TripleO::Services::SensuClient: /usr/share/openstack-tripleo-heat-templates/puppet/services/monitoring/sensu-client.yaml
+
+parameter_defaults:
+  MonitoringRabbitHost: 192.168.24.1
+  MonitoringRabbitPort: 5671
+  MonitoringRabbitUserName: sensu
+  MonitoringRabbitPassword: sensu
+  MonitoringRabbitUseSSL: false
+  MonitoringRabbitVhost: "/sensu"
