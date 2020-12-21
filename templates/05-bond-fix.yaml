@@ -1,0 +1,4 @@
+parameter_defaults:
+  ControllerKernelArgs: "rd.net.timeout.carrier=30"
+  ComputeKernelArgs: "rd.net.timeout.carrier=30"
+  CephStorageKernelArgs: "rd.net.timeout.carrier=30"
