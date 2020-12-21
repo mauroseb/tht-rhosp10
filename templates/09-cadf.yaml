@@ -1,0 +1,5 @@
+parameter_defaults:
+  KeystoneNotificationFormat: cadf
+  KeystoneNotificationDriver:
+  - messaging
+  - log
