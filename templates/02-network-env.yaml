@@ -1,0 +1,53 @@
+resource_registry:
+  OS::TripleO::CephStorage::Net::SoftwareConfig: nic-configs/ceph-storage.yaml
+  OS::TripleO::Compute::Net::SoftwareConfig: nic-configs/compute.yaml
+  OS::TripleO::Controller::Net::SoftwareConfig: nic-configs/controller.yaml
+
+parameter_defaults:
+  CloudDomain: redhat.local
+  CloudName: overcloud.redhat.local
+  NodeRootPassword: 'redhat'
+  BondInterfaceOvsOptions: 'mode=1 miimon=150 updelay=900' 
+  ControlPlaneDefaultRoute: 192.168.24.1
+  ControlPlaneSubnetCidr: '24'
+  DnsServers:
+  - 10.0.0.1
+  EC2MetadataIp: 192.168.24.1
+
+  ExternalInterfaceDefaultRoute: 10.0.0.1
+  ExternalNetCidr: 10.0.0.0/24
+  ExternalNetworkVlanID: 1
+  ExternalAllocationPools:
+  -   end: 10.0.0.129
+      start: 10.0.0.101
+
+  InternalApiNetCidr: 172.17.1.0/24
+  InternalApiNetworkVlanID: 20
+  InternalApiAllocationPools:
+  -   end: 172.17.1.149
+      start: 172.17.1.10
+
+  StorageNetCidr: 172.17.3.0/24
+  StorageNetworkVlanID: 30
+  StorageAllocationPools:
+  -   end: 172.17.3.149
+      start: 172.17.3.10
+
+  StorageMgmtNetCidr: 172.17.4.0/24
+  StorageMgmtNetworkVlanID: 40
+  StorageMgmtAllocationPools:
+  -   end: 172.17.4.149
+      start: 172.17.4.10
+
+  TenantNetCidr: 172.17.2.0/24
+  TenantNetworkVlanID: 50
+  TenantAllocationPools:
+  -   end: 172.17.2.149
+      start: 172.17.2.10
+
+  #NeutronBridgeMappings: datacentre:br-ex
+  #NeutronNetworkVLANRanges: tenant:1000:2000
+  NeutronExternalNetworkBridge: "''"
+  NeutronNetworkType: vxlan
+  NeutronTunnelTypes: vxlan
+
