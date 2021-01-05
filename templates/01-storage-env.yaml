@@ -14,6 +14,7 @@ parameter_defaults:
   GnocchiBackend: rbd
   
   ExtraConfig:
+    ceph::profile::params::osd_journal_size: 1024
     ceph::profile::params::osds:
       '/dev/vdb': {}
     ceph::conf::args:
