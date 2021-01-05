@@ -12,6 +12,34 @@ parameter_defaults:
   NovaEnableRbdBackend: true
   GlanceBackend: rbd
   GnocchiBackend: rbd
+  
   ExtraConfig:
     ceph::profile::params::osds:
       '/dev/vdb': {}
+    ceph::conf::args:
+      global/max_open_files:
+        value: 131072
+      global/mon_max_pg_per_osd:
+        value: 1024
+        
+  CephPools:
+    vms:
+      size: 1
+      pg_num: 64
+      pgp_num: 64
+    images:
+      size: 1
+      pg_num: 64
+      pgp_num: 64
+    volumes:
+      size: 1
+      pg_num: 64
+      pgp_num: 64
+    backups:
+      size: 1
+      pg_num: 64
+      pgp_num: 64
+    metrics:
+      size: 1
+      pg_num: 64
+      pgp_num: 64
