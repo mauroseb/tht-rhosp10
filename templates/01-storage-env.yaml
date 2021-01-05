@@ -29,8 +29,8 @@ parameter_defaults:
       pgp_num: 64
     images:
       size: 1
-      pg_num: 64
-      pgp_num: 64
+      pg_num: 32
+      pgp_num: 32
     volumes:
       size: 1
       pg_num: 64
