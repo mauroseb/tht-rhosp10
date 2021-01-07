@@ -42,6 +42,7 @@ echodo time openstack overcloud deploy \
         --ceph-storage-flavor ceph --ceph-storage-scale 1 \
         --neutron-tunnel-types vxlan --neutron-network-type vxlan \
         -e /usr/share/openstack-tripleo-heat-templates/environments/network-isolation.yaml \
+        -e ${THT}/00-common.yaml \
         -e ${THT}/01-storage-env.yaml \
         -e ${THT}/02-network-env.yaml \
         -e ${THT}/03-predictable-hostnames.yaml \
