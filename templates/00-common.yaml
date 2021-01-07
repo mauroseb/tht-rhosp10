@@ -1,0 +1,7 @@
+parameter_defaults:
+  ExtraConfig:
+    tripleo::profile::base::sshd::options:
+      PasswordAuthentication: 'yes'
+      GSSAPIAuthentication: 'no'
+      PermitRootLogin: 'yes'
+      UseDNS: 'no'
