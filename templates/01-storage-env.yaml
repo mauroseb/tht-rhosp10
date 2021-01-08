@@ -14,8 +14,11 @@ parameter_defaults:
   GnocchiBackend: rbd
   
   ExtraConfig:
+    ceph::profile::params::osd_pool_default_pg_num: 64
+    ceph::profile::params::osd_pool_default_pgp_num: 64
+    ceph::profile::params::osd_pool_default_pgp_num: 1
     ceph::profile::params::osd_journal_size: 1024
-    ceph::profile::params::osds:
+    ceph::profile::params::osd_pool_default_size: 1
       '/dev/vdb': {}
     ceph::conf::args:
       global/max_open_files:
