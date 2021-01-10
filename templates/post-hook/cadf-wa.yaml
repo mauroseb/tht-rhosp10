@@ -20,6 +20,8 @@ resources:
         if [[ `hostname` = *"lab-ctl-"* ]]; then
             sed -i 's/driver[\t ]*=[\t ]*messaging,log/driver = messaging\ndriver = log/' /etc/keystone/keystone.conf
             systemctl restart httpd.service
+            crudini --del /usr/share/neutron/neutron-dist.conf DEFAULT notification_driver
+            systemctl list-unit-files | awk '/neutron.*enabled/ && $1 !~ /cleanup/ { print $1; }' | xargs systemctl restart
         fi
 
   CustomExtraDeployments:
