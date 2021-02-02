@@ -1,0 +1,45 @@
+{
+    "ssh-user": "stack",
+  "ssh-key": "",
+  "power_manager": "nova.virt.baremetal.virtual_power_driver.VirtualPowerManager",
+  "host-ip": "172.16.0.1",
+  "arch": "x86_64",
+    "nodes": [
+    {
+      "name": "ceph-0",
+      "mac": ["52:54:00:33:ea:83"],
+      "cpu": "2",
+      "memory": "4096",
+      "disk": "10",
+              "disks": ["vda","vdb","vdc","vdd","vde","vdf"],
+            "arch": "x86_64",
+              "pm_addr": "172.16.0.1",
+        "pm_type": "pxe_ssh",
+        "pm_user": "stack",
+        "pm_password": ""
+                },    {
+      "name": "compute-0",
+      "mac": ["52:54:00:0b:f2:6d"],
+      "cpu": "2",
+      "memory": "16384",
+      "disk": "20",
+              "disks": ["vda"],
+            "arch": "x86_64",
+              "pm_addr": "172.16.0.1",
+        "pm_type": "pxe_ssh",
+        "pm_user": "stack",
+        "pm_password": ""
+                },    {
+      "name": "controller-0",
+      "mac": ["52:54:00:ef:43:ea"],
+      "cpu": "8",
+      "memory": "32768",
+      "disk": "30",
+              "disks": ["vda"],
+            "arch": "x86_64",
+              "pm_addr": "172.16.0.1",
+        "pm_type": "pxe_ssh",
+        "pm_user": "stack",
+        "pm_password": ""
+                }    ]
+}
