@@ -1,4 +1,5 @@
 parameter_defaults:
+  # token caching needs to be enabled at full for performance reasons along with CADF
   KeystoneNotificationFormat: cadf
   KeystoneNotificationDriver:
   - messaging
